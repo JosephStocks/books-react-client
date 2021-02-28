@@ -3,12 +3,49 @@ import { bookSearchByISBN, bookSearch, bookSearchByTitle, bookSearchByAuthor } f
 import axios from "axios";
 import styled from "styled-components";
 import Book from "./Book";
+// import Container from "react-bootstrap/Container";
+// import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
 
 const Form = styled.form`
   margin-left: auto;
   margin-right: auto;
   display: block;
   width: fit-content;
+`;
+
+const H2 = styled.h2`
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: fit-content;
+  margin-top: 1rem;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  row-gap: 0.5rem;
+  column-gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  margin: 0.5rem;
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 `;
 
 export default function App() {
@@ -30,6 +67,7 @@ export default function App() {
 
   return (
     <div>
+      <H2>Search for a book!</H2>
       <Form onSubmit={handleSubmit}>
         <input
           value={searchText}
@@ -42,9 +80,11 @@ export default function App() {
         <button type="submit">Submit</button>
       </Form>
       <div>
-        {books.map((book) => (
-          <Book book={book} />
-        ))}
+        <Grid>
+          {books.map((book) => (
+            <Book book={book} />
+          ))}
+        </Grid>
       </div>
     </div>
   );

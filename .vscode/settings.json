@@ -1,4 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
     "prettier.printWidth": 120,
+    "files.autoSave": "off",
+    "editor.formatOnSave": false,
 }
