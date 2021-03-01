@@ -63,11 +63,11 @@ export const bookSearchByISBN = async (isbn) => {
 };
 
 export const bookSearchByTitle = async (title) => {
-  return flattenDeeplyNestedObject(await baseSearch(`intitle:"${title}"`)).data;
+  return flattenDeeplyNestedObject(await baseSearch(`intitle:${title}`)).data;
 };
 
 export const bookSearchByAuthor = async (author) => {
-  return flattenDeeplyNestedObject(await baseSearch(`inauthor:"${author}"`)).data;
+  return flattenDeeplyNestedObject(await baseSearch(`inauthor:${author}`)).data;
 };
 
 export const searchMapping = {
@@ -76,5 +76,3 @@ export const searchMapping = {
   title: bookSearchByTitle,
   author: bookSearchByAuthor,
 };
-
-// const getSearchFunction = (type) => {}

@@ -43,6 +43,7 @@ export default function WantToReadBooks() {
   const books = useSelector((state) => state.wantToRead.wantToReadBooks);
   return (
     <>
+      <H2>Books I Want To Read</H2>
       <Grid>
         {books.map((book) => (
           <DisplayBook book={book} />

@@ -130,7 +130,7 @@ export default function Book({ book }) {
     } else {
       setDescriptionLines(3);
     }
-  }); //empty dependency array so it only runs once at render
+  }, [height]); //empty dependency array so it only runs once at render
 
   // if not description, show textSnippet
   return (

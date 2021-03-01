@@ -43,6 +43,7 @@ export default function ReadBooks() {
   const books = useSelector((state) => state.alreadyRead.readBooks);
   return (
     <>
+      <H2>Books I've Read</H2>
       <Grid>
         {books.map((book) => (
           <DisplayBook book={book} />

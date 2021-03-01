@@ -55,9 +55,14 @@ export default function App() {
 
   const search = () => {
     (async () => {
-      let result = await bookSearchByTitle(searchText);
-      console.log(result);
-      setBooks(result.items);
+      try {
+        let result = await bookSearchByTitle(searchText);
+        console.log(result);
+        setBooks(result.items);
+      } catch (error) {
+        setBooks([]);
+        console.log("There must not be any results for that!");
+      }
     })();
   };
 
