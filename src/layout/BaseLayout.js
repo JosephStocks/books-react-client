@@ -9,10 +9,12 @@ export default function BaseLayout(props) {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
+        margin: 0,
+        padding: 0,
       }}
     >
       <Header />
-      <div style={{ flex: 1 }}>{props.children}</div>
+      <div style={{ flex: 1, margin: 0, padding: 0 }}>{props.children}</div>
       <Footer />
     </div>
   );

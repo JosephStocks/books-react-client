@@ -25,10 +25,6 @@ const ButtonGroup = styled.div`
   margin-bottom: 0.75rem;
 `;
 
-const Button = styled(UnstyledButton)`
-  margin-left: 0.5rem;
-`;
-
 const CardContent = styled.div`
   padding: 0.25rem 1rem; // [y] [x]
   display: flex;
@@ -48,15 +44,6 @@ const Card = styled.div`
     transform: scale(1.02);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-    ${CardContent} {
-      /* filter: blur(1px); */
-      filter: opacity(50%);
-    }
-
-    ${ButtonGroup} {
-      display: block;
-    }
   }
 `;
 
@@ -131,7 +118,7 @@ export default function Book({ book }) {
 
   const PLACEHOLDER_IMAGE = "https://tacm.com/wp-content/uploads/2018/01/no-image-available.jpeg";
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [height, setHeight] = useState(0);
   const [descriptionLines, setDescriptionLines] = useState(0);
   const elementRef = useRef(null);
@@ -181,26 +168,6 @@ export default function Book({ book }) {
             </CardText>
           )}
         </CardContent>
-        <ButtonGroup key={`buttons-${id}`}>
-          <Button
-            key={`button1-${id}`}
-            size="sm"
-            onClick={() => {
-              dispatch(addBookToRead(book));
-            }}
-          >
-            Add To Already Read
-          </Button>
-          <Button
-            key={`button2-${id}`}
-            size="sm"
-            onClick={() => {
-              dispatch(addBookToWantToRead(book));
-            }}
-          >
-            Add To Want to Read
-          </Button>
-        </ButtonGroup>
       </Card>
     </>
   );

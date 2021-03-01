@@ -28,6 +28,7 @@ const Grid = styled.div`
   column-gap: 1rem;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   margin: 0.5rem;
+
   @media (min-width: 576px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -66,7 +67,7 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div style={{ padding: 0, margin: 0 }}>
       <H2>Search for a book!</H2>
       <Form onSubmit={handleSubmit}>
         <input

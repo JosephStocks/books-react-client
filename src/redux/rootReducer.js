@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 
-// import counterReducer from "./Counter/counter.reducer";
+import alreadyRead from "./readBooks/alreadyRead.reducer";
+import wantToRead from "./wantToReadBooks/wantToRead.reducer";
 
 const rootReducer = combineReducers({
-  // counter: counterReducer,
+  alreadyRead: alreadyRead,
+  wantToRead: wantToRead,
 });
 
 export default rootReducer;
